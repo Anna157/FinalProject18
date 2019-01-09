@@ -155,6 +155,7 @@ wait()
 print("The class goes on, but you're getting really tired. You just took a test, okay. How in the world are you supposed to stay awake?")
 seven = input("You're not. So here's the deal, do you want to struggle to keep your eyes open or just go to sleep? awake/sleep ").title()
 if seven == "Awake":
+    print("")
     print("But you're so tireddddd. You fight your hardest to keep your eyes open, being a good student and paying attention to your boring teacher.")
     wait()
     print("Turns out your teacher was just going to review everything you were just tested on for the rest of class. There was absolutely no need for you to stay awake.")
@@ -162,6 +163,7 @@ if seven == "Awake":
     print("Good job, goody two shoes. Minus 2 win points.")
     you.win_points -=2
 if seven == "Sleep":
+    print("")
     print("Good idea. You've dealt with a lot so far. You need a break.")
     wait()
     print("What a fantastic nap. And the greatest part, your friend tells you that your teacher literally did nothing but review the stuff you just got tested on. You got away scot-free!")
@@ -184,10 +186,11 @@ elif lunch == "Buy":
     wait()
     if you.self_esteem_points <5:
         print("You're way too self conscious right now to look like a loser. Your self esteem is pretty low. You should get that checked out. Anyway, you don't want to look like a loser, so you go hungry instead. What a smart decision. Minus 1 win point.")
-        you.win_point -=1
+        you.win_points -=1
     elif you.self_esteem_points >5:
         print("Literally who cares if people think you're a loser. Go get that lunch! Plus 4 win points!")
         wait()
+        time.sleep(1)
         print("Yeah... um... you forgot your money....... Good job.. Minus 3 win points.")
         you.win_points +=1
 wait()
@@ -206,6 +209,7 @@ print(f"You now have {you.win_points} win points.")
 wait()
 attention = input("The bell rings, and you go to 9/10. But your teacher is just sooooooooo boring. Do you want to zone out or keep paying attention? zone/pay ").title()
 if attention == "Zone":
+    print("")
     print("Yeah, you're right. Who needs to pay attention in class? It sucks, you're bored, so why not take a nap instead?")
     wait()
     print("Your teacher looks around the room at all the bored faces. Their eyes land on you. You remain unaware as they stalk closer to you.")
@@ -213,6 +217,7 @@ if attention == "Zone":
     print("Your teacher asks you a question. You are unable to answer. You fail the class instantly. Minus 2 win points.")
     you.win_points -=2
 elif attention == "Pay":
+    print("")
     print("You struggle to stay awake, but you do in the end. Good perseverance.")
     wait()
     print("Your teacher looks around the room at all the bored faces. Their eyes land on you. You become slightly frightened as they stalk towards you.")
@@ -225,10 +230,12 @@ print(f"You now have {you.win_points} win points.")
 wait()
 print("School is over! Yay! But the game's not done!")
 wait()
-home = input("Do you take the bus home, get a ride, or walk? bus/ride/walk ").title()
-if home == "Ride":
+home = input("Do you take the bus home, drive, or walk? bus/drive/walk ").title()
+if home == "Drive":
+    print("")
     car = input("Okay,but do you carpool with friends or just go straight home? carpool/home ").title()
     if car == "Home":
+        print("")
         print("You go straight home. There's an accident on the road and it take you 15 extra minutes to get home because of it.")
         wait()
         print("That's a little inconvenient, sure, but you deal with it.")
@@ -236,6 +243,7 @@ if home == "Ride":
         print("Minus 1 win point, though.")
         you.win_points -=1
     elif car == "Carpool":
+        print("")
         print("You have to wait an extra 10 minutes for your friends to get ready to go.")
         wait()
         print("Which makes you so late to get to your car, you get stuck behind all the buses leaving the parkig lot.")
@@ -246,18 +254,22 @@ if home == "Ride":
         wait()
         you.win_points -=2
 elif home == "Bus":
+    print("")
     print("Your bus leaves on time, but there's an accident on the road near the school, which makes your driver a little impatient.")
     wait()
     print("Though you have to go 15 minutes out of your way to get home, your bus driver is so impatient that they speed.")
     wait()
     print("You end up getting home 5 minutes earlier than usual! Plus 1 win point.")
+    wait()
     you.win_points +=1
 elif home == "Walk":
+    print("")
     print("You walk home. As you get out of campus, you notice an accident on the road near school.")
     wait()
     print("Good thing you walked home, or you would have been stuck behind that accident for a while!")
     wait()
     print("Plus 2 win points.")
+    wait()
     you.win_points += 2
 print(f"You now have {you.win_points} win points.")
 wait()
@@ -265,19 +277,25 @@ print("As you walk into your house, you feel your phone buzz.")
 wait()
 grades = input("Oh look, an update from PowerSchool! Do you want to check it? y/n ").title()
 if grades == "Y" or grades == "Yes":
+    print("")
     print("You open up PowerSchool and wait for it to load.")
     wait()
     print("Oof.")
     print("")
     if 5 <= you.self_esteem_points:
         print("Your grades weren’t the best, but your self esteem is high enough that you can take this hit and still survive.")
+        wait()
         print("Don’t worry, it’ll get better! Plus 1 win point.")
+        wait()
         you.win_points +=1
     elif 5 >= you.self_esteem_points:
         print("Your grades were awful, as to be expected from you.")
+        wait()
         print("Your self esteem is so low and this was just the final push to realizing you suck. Minus 3 win points.")
+        wait()
         you.win_points -=3
 else:
     print("That’s fine, it was probably a good idea not to anyway. Your grades would just depress you, and you know it. Plus 2 win points.")
+    wait()
     you.win_points +=2
 
