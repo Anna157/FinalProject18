@@ -32,7 +32,6 @@ you = ""
 haha = input("Do you want to play a game? y/n ").title()
 if haha == "Y" or haha == "Yes":
     print("Oh yay! I'm so happy you said yes, I worked really hard on this game, and I hope you enjoy it!")
-    wait()
 elif haha == "N" or haha == "No":
     um = input("Wait, seriously? y/n ").title()
     if um == "Y" or um == "Yes":
@@ -62,7 +61,7 @@ time.sleep(1)
 jun.stats()
 time.sleep(1)
 sen.stats()
-red = input("What grade do you want to be in? Choose wisely, your stats are actually important and may help or hinder your gaming experience. freshman/sophomore/junior/senior ").title()
+red = input("What grade do you want to be in? Choose wisely, your stats are actually important and may help or hinder your gaming experience. freshman/sophomore/junior/senior/teacher ").title()
 if red == "Freshman":
     you = frosh
 elif red == "Sophomore":
@@ -71,6 +70,13 @@ elif red == "Junior":
     you = jun
 elif red == "Senior":
     you = sen
+elif red == "Teacher":
+    print("Bruh.")
+    wait()
+    print("This game is about being a Magnet STUDENT. What are you doooing??")
+    wait()
+    print("You just had to be special, huh? Too bad. Game over.")
+    sys.exit()
 else:
     print("No. That input wasn't good, so I don't care what you actually want. Now you're a freshman.")
     red = "Freshman"
