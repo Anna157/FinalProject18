@@ -29,10 +29,30 @@ soph = Grade("Sophomore", 3, 6, 5, 4, 0)
 jun = Grade("Junior", 10, 2, 9, 6, 0)
 sen = Grade("Senior", 6, 7, 10, 8, 0)
 you = ""
-haha = input("Do you want to play a game? ")
-time.sleep(1)
-print("It literally doesn't matter what you say you're playing.")
-print("")
+haha = input("Do you want to play a game? y/n ").title()
+if haha == "Y" or haha == "Yes":
+    print("Oh yay! I'm so happy you said yes, I worked really hard on this game, and I hope you enjoy it!")
+    wait()
+elif haha == "N" or haha == "No":
+    um = input("Wait, seriously? y/n ").title()
+    if um == "Y" or "Yes":
+        print("Fine. It's not like I poured my heart and soul into this or anything.")
+        wait()
+        guilt = input("Do you feel guilty enough to play my game or are you going to spite me? play/spite ").title()
+        if guilt == "Play":
+            print("I'm glad you came to your senses. Enjoy!")
+        else:
+            print("Wow. That's really rude, you know.")
+            wait()
+            print("You're a meanie-face.")
+            wait()
+            print("Okay then. Goodbye. I'm sorry you didn't want to play with me.")
+            sys.exit()
+    else:
+        print("Wow. okay. You scared me there for a second.")
+        wait()
+        print("You know, that's a really mean joke to play on someone who just wants to entertain you with their game. You're lucky I'm so forgiving.")
+        wait()
 time.sleep(1)
 frosh.stats()
 time.sleep(1)
@@ -161,6 +181,7 @@ if seven == "Awake":
     print("Turns out your teacher was just going to review everything you were just tested on for the rest of class. There was absolutely no need for you to stay awake.")
     wait()
     print("Good job, goody two shoes. Minus 2 win points.")
+    wait()
     you.win_points -=2
 if seven == "Sleep":
     print("")
@@ -169,6 +190,7 @@ if seven == "Sleep":
     print("What a fantastic nap. And the greatest part, your friend tells you that your teacher literally did nothing but review the stuff you just got tested on. You got away scot-free!")
     wait()
     print("Just for that, plus 3 win points! You deserve it!")
+    wait()
     you.win_points +=3
 print(f"You now have {you.win_points} win points.")
 wait()
