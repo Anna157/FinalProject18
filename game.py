@@ -8,7 +8,7 @@ def extra():
     for char in poke:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(.25)
+        time.sleep(.05)
 class Grade:
     def __init__(self, grade, stress_points, self_esteem_points, friend_points, intelligence_points, win_points):
         self.grade = grade
@@ -298,4 +298,6 @@ else:
     print("That’s fine, it was probably a good idea not to anyway. Your grades would just depress you, and you know it. Plus 2 win points.")
     wait()
     you.win_points +=2
+print(f"You now have {you.win_points} win points.")
+wait()
 
