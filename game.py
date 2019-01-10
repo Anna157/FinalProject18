@@ -35,24 +35,25 @@ if haha == "Y" or haha == "Yes":
     wait()
 elif haha == "N" or haha == "No":
     um = input("Wait, seriously? y/n ").title()
-    if um == "Y" or "Yes":
+    if um == "Y" or um == "Yes":
         print("Fine. It's not like I poured my heart and soul into this or anything.")
         wait()
         guilt = input("Do you feel guilty enough to play my game or are you going to spite me? play/spite ").title()
         if guilt == "Play":
             print("I'm glad you came to your senses. Enjoy!")
-        else:
+        elif guilt == "Spite":
             print("Wow. That's really rude, you know.")
             wait()
             print("You're a meanie-face.")
             wait()
             print("Okay then. Goodbye. I'm sorry you didn't want to play with me.")
             sys.exit()
-    else:
+    elif um == "N" or um == "No":
         print("Wow. okay. You scared me there for a second.")
         wait()
         print("You know, that's a really mean joke to play on someone who just wants to entertain you with their game. You're lucky I'm so forgiving.")
-        wait()
+else:
+    print("That's not a good answer. However, I'm going to assume you meant to say yes. Here we go!")
 time.sleep(1)
 frosh.stats()
 time.sleep(1)
@@ -61,7 +62,7 @@ time.sleep(1)
 jun.stats()
 time.sleep(1)
 sen.stats()
-red = input("What grade do you want to be in? Choose wisely, your stats are actually important and may help or hinder your gaming experience. ").title()
+red = input("What grade do you want to be in? Choose wisely, your stats are actually important and may help or hinder your gaming experience. freshman/sophomore/junior/senior ").title()
 if red == "Freshman":
     you = frosh
 elif red == "Sophomore":
@@ -322,4 +323,5 @@ else:
     you.win_points +=2
 print(f"You now have {you.win_points} win points.")
 wait()
+print("The day's almost done!")
 
