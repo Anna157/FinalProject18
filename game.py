@@ -115,18 +115,36 @@ elif 0>= wake or wake >10:
     print("Sigh.")
     wait()
     failure = input("Do you want to try again? (y/n) ").title()
-    print("Again, it literally doesn't matter what you say. I worked hard on this game, you're going to play it.")
-    wait()
-    promise = input("Can you at least promise to actually follow the istructions this time? (y/n) ").title()
-    if promise == "Y" or promise == "Yes":
-        print("")
-        print("Fine. You're on thin ice, but i'm awarding you 95 win points. You're still starting lower than you would have if you had FOLLOWED INSTRUCTIONS, but you still have a chance. Feel free to play on.")
-        you.win_points +=95
-    elif promise == "N" or promise == "No":
-        print("")
-        print("Fine. Coward.")
+    if failure == "Y" or failure == "Yes":
+        promise = input("Okay, but can you promise to actually follow the istructions this time? (y/n) ").title()
+        if promise == "Y" or promise == "Yes":
+            print("")
+            print("Fine. You're on thin ice, but i'm awarding you 95 win points. You're still starting lower than you would have if you had FOLLOWED INSTRUCTIONS, but you still have a chance. Feel free to play on.")
+            you.win_points +=95
+        elif promise == "N" or promise == "No":
+            print("")
+            print("Fine. Coward.")
+            wait()
+            sure = input("Are you absolutely positive? y/n ").title()
+            if sure == "Y" or sure == "Yes":
+                print("That's sad. Now I'm sad. You happy? I'm crying now. I'm drowning in my tears becuase you won't promise to follow the instructions of my game.")
+                wait()
+                print(f"Goodbye. Game over.")
+                sys.exit()
+            else:
+                print("Too bad. You already made your choice. I'm not letting you play my game if you chnage your mind so easily.")
+                wait()
+                print("That's right. Game over.")
+                wait()
+                print("Nah, I'm just kidding. I wouldn't be so mean.")
+                wait()
+                print("No, I'm not kidding at all. I would be so mean.")
+                sys.exit()
+    else:
+        print("You really don't want to play, huh?")
         wait()
-        print(f"Have fun trying to win the game starting with -100 points.")
+        print("Fine. Then I don't want you to play, either. Bye bye.")
+        sys.exit()
 wait()
 print(f"You now have {you.win_points} win points. You will get updates like this after every challenge you complete, so you won't have to track your points yourself.")
 wait()
@@ -330,4 +348,145 @@ else:
 print(f"You now have {you.win_points} win points.")
 wait()
 print("The day's almost done!")
+wait()
+print("T.G.I.F, am I right?")
+wait()
+if you.friend_points >=5:
+    print("Here’s the thing, though. Because you have so many friends, your weekend is packed with plans, and you won’t have much time to do any work, even though you have a test on Monday.")
+    wait()
+    study = input("Well? Do you want to study now? y/n ").title()
+    if study == "Yes" or study == "Y":
+        print("Wow, how responsible of you! You’re really the epitome of good, hardworking Magnet students. Plus 2 win points.")
+        wait()
+        you.win_points +=2
+    else:
+        print("Yeah, you’re right. Fridays are for laying around doing nothing.")
+        wait()
+        print("Besides, this game is about surviving a day at Magnet, and ends before Monday, it’s not like this means anything.")
+        wait()
+else:
+    print("Here’s the thing, though. You don’t have a lot of friends, so you have nothing to do.")
+    wait()
+    test= input("However, you do have a test on Monday. Do you want to study now?").title()
+    if test == "No" or test == "N":
+        print("You’re right! That’s what weekends are for, after all! Procrastinate now.")
+        wait()
+        print("Besides, this game ends is about surviving a day at Magnet, and ends before Monday, it’s not like this means anything.")
+        wait()
+    else:
+        print("Bruh you're so responsible you're making me look bad.")
+        wait()
+        print("But it's fine. Good for you, really. You're the epitome of good, hardworking Magnet students. Plus 2 win points.")
+        wait()
+        you.win_points +=2
+print(f"You now have {you.win_points} win points.")
+wait()
+print("It's almost time for you to go to sleep! You've got an early morning tomorrow, so you've got to choose a time to go to sleep!")
+wait()
+tired = int(input("Choose a number between 1 and 12."))
+if 1<= tired <=3:
+    print(f"You only got {tired} hours of sleep!")
+    wait()
+    print("You know that teens are supposed to get between 8 to 10 hours of sleep a night, right?")
+    wait()
+    print("This really isn't healthy. You should change your habits. As an incentive to get more sleep at night, I'm subtracting 5 win points.")
+    wait()
+    print("And yes, I know, if you're going for the authentic Magnet experience, choosing to get less than 3 hours of sleep was the right decision.")
+    wait()
+    print("It's still not healthy, but I'll add back 2 win points for accuracy.")
+    you.win_points -=3
+elif 4<= tired <= 6:
+    print(f"You got {tired} hours of sleep.")
+    wait()
+    print("You do realize it's the weekend, right? You should be trying to catch up on all the sleep you lost during the week.")
+    wait()
+    print("Plus, you know you're supposed to get between 8 to 10 hours as a teenager, right?")
+    wait()
+    print("You're a couple hours short of that. Minus 1 win point.")
+    wait()
+    you.win_points -=1
+elif 7<= tired <=9:
+    print(f"You got {tired} hours of sleep, good for you! (I haven't gotten that much sleep in months)")
+    wait()
+    print("Good job, you, with your healthy habits. Plus 3 win points.")
+    wait()
+    you.win_points +=3
+    envy = input("I'm jealous. Tell me, in real life, do you actually get that much sleep on the regular? y/n ").title()
+    if envy == "Y" or envy == "Yes":
+        print("Seriously, good for you.")
+        wait()
+        print("Minus one point because of my jealousy.")
+        wait()
+        you.win_points -=1
+    else:
+        print("Oh, okay. So you lied to the game, huh?")
+        wait()
+        print("Lying isn't a good character trait. You should change that. Minus 1 win point.")
+        you.win_points -=1
+elif 10<= tired <= 12:
+    print("Dang, you got {tired} hours of sleep. Impressive. I haven't gotten that much sleep since I was born.")
+    wait()
+    print("Congrats. I'm jealous of your healthy habits. Plus 5 win points.")
+    wait()
+     envy = input("Though, tell me, in real life, do you actually get that much sleep on the regular? y/n ").title()
+    if envy == "Y" or envy == "Yes":
+        print("Seriously, good for you.")
+        wait()
+        print("Minus two points because you made me jealous.")
+        wait()
+        you.win_points -=2
+    else:
+        print("Oh, okay. So you lied to the game, huh?")
+        wait()
+        print("Lying isn't a good character trait. You should change that. Minus 2 win points.")
+        you.win_points -=2
+else:
+    if 0>= wake or wake >10:
+        print("Again?? You didn't learn from the first time? You know how annoyed I got the first time, so you decided to test me again?")
+        wait()
+        print("You buttmunch. Minus 10 win points.")
+        you.win_points -=10
+    else:
+        print("Okay, you were supposed to pick a number between 1 and 12. You decided to defy the rules that I clearly expressed to you.")
+        wait()
+        print("Minus 5 win points. Follow the rules next time.")
+        you.win_points -=5
+print(f"You now have {you.win_points} win points.")
+wait()
+print("Before you go to sleep, you feel a bunch of buzzes from your phone.")
+wait()
+time.sleep(1)
+print("You scroll down, and at the bottom, oh look, another notification from PowerSchool!")
+print("""
+Your phone screen:
+ _______________________________________________
+|   __________                                  |
+|  |  _ ___   |                                 |
+|  | | |   \  |                                 |
+|  | | | |) ) |                                 |
+|  | | |___/  |                                 |
+|  | | |      |                                 |
+|  | |_|      |                                 |
+|  |__________|                                 |
+|                                               |
+|                                               |
+|       PowerSchool is temporarily shut down.   |
+|       Please check back in 2 weeks,           |
+|       even though it’ll actually              |
+|       only open a month later.                |
+|                                               |
+|                                               |
+|                                               |
+|                                               |
+|       (Sucker.)                               |
+|                                               |
+|                                               |
+|                                               |
+|                                               |
+|                                               |
+|       (Minus 5 win points.)___________________|
+
+
+
+
 
