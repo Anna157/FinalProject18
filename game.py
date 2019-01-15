@@ -1,5 +1,6 @@
 import time
 import sys
+import random
 def wait():
     wait = input("")
     return
@@ -7,7 +8,52 @@ def delay(string):
     for char in string:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(.05)
+        time.sleep(.1)
+def extra_o():
+    delay("A wild Sanservino appears!")
+    wait()
+    delay("He is going to ask you a series of questions.")
+    wait()
+    delay("Answer them all correctly, and you may pass.")
+    wait()
+def extra1():
+    delay("Sanservino hisses at you, then asks his first question:")
+    time.sleep(1)
+    delay("What is my first name?")
+    name = input("").title()
+    if name == "Jason":
+        win1 = True
+    else:
+        win1 = False
+def extra2():
+    delay("Sanservino growls. You are getting closer to suceeding.")
+    wait()
+    delay("He comes up with a harder question:")
+    time.sleep(1)
+    delay("What is my birthday? Answer in MM/DD/YYYY form.")
+    birth = input("")
+    if birth == "12/23/1976":
+        win2 = True
+    else:
+        win2 = False
+    return win2
+def extra3():
+    delay("You are getting way too close to winning for Sanservino's liking.")
+    wait()
+    delay("He decides to ask you a harder question:")
+    time.sleep(1)
+    delay("Who is Anna's favorite Harry Potter character?")
+    fav = input("").title()
+    if fav == "Sirius" or fav == "Sirius Black":
+        win3 = True
+    elif fav == "Hermione" or fav == "Hermione Granger":
+        win3 = True
+    else:
+        win3 = False
+def extra_h1():
+    pass
+def extra_h2():
+    pass
 class Grade:
     def __init__(self, grade, stress_points, self_esteem_points, friend_points, intelligence_points, win_points):
         self.grade = grade
@@ -560,15 +606,73 @@ if you.win_points >=10:
         print("So now I'm even more proud of you! WHy don't you try again, but on an easier level? Or you can experiment more with your answers and see if you can still win.")
         wait()
         print("Either way, I hope you have a good day. Bye!")
+        sys.exit()
     else:
         print("Congratulations, I'm so proud of you for beating my game!")
         wait()
         print("You can choose to play on a harder level, if you want. It's not exact, but it is definitely harder to win as a younger grade.")
         wait()
         print("Well, hope you have a good day! Bye!")
+        sys.exit()
 elif 5<= you.win_points >=9:
     print("You were so close!")
-
+    wait()
+    print("Well then, I know that I'm pretty competitive, and I would be super pissed to play this entire game and then lose because of Powerschool.")
+    wait()
+    bonus = input("Well then, do you want to play a bonus level for some extra credit? y/n ").title()
+    print("")
+    if bonus == "No" or bonus == "n":
+        print("Oh, so I guess you're fine with being a failure.")
+        wait()
+        print("That's not very Magnet of you. In fact, it's so unlike a Magnet student, you don't deserve to win it.")
+        wait()
+        print("Get out of my game. Now.")
+        sys.exit()
+    elif bonus == "Y" or bonus == "Yes":
+        print("Good luck, okay?")
+        wait()
+        print("The bonus level is going to be hard. It might even be a litle scary. But you're sure you want this?")
+        wait()
+        scared = input("You can back out right now if you want. Do you want to? I won't judge. y/n ").title()
+        print("")
+        if scared == "N" or scared == "No":
+            print("I lied. I'm judging you really hard.")
+            wait()
+            print("Goodbye, coward. Hope you like living your cowardly life. As long as it's far away from me, I'll be happy.")
+            sys.exit()
+        else:
+            print("Okay, if you're absolutely sure.")
+            wait()
+            print(f"Good luck, brave {red}. You will need copious amounts of it.")
+            print("")
+            extra_o()
+            extra1()
+            if win1 == True:
+                extra2()
+                if win2 == True:
+                    extra3()
+                    if win3 == True:
+                        you.win_points +=5
+                        print("")
+                        print(f"Congratulations. You earned 5 extra win points from that excursion. You now have {you.win_points}, enough to win the game!")
+                        wait()
+                        print("Feel free to play the game again on a harder level, if you feel up to it. Have a good day!")
+                        sys.exit()
+                    else:
+                        print("You lost. You were so close to the end, too. Guess you should learn more about my reading tastes.")
+                        wait()
+                        print("Goodbye, loser.")
+                        sys.exit()
+                else:
+                    print("You lost. How dare you not know Sanservino's birthday? Disappointing.")
+                    wait()
+                    print("Goodbye.")
+                    sys.exit()
+            else:
+                print("You lost. And on such a simple question, too? Disappointing.")
+                wait()
+                print("Goodbye.")
+                sys.exit()
 elif 0<= you.win_points >=4:
     print("Not done yet.")
     print("I dont feel like coding the extra credit okay.")
