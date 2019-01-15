@@ -3,9 +3,8 @@ import sys
 def wait():
     wait = input("")
     return
-def extra():
-    poke = "A wild Sanservino appears!"
-    for char in poke:
+def delay(string):
+    for char in string:
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(.05)
@@ -31,11 +30,12 @@ sen = Grade("Senior", 6, 7, 10, 8, 0)
 you = ""
 haha = input("Do you want to play a game? y/n ").title()
 if haha == "Y" or haha == "Yes":
-    print("Oh yay! I'm so happy you said yes, I worked really hard on this game, and I hope you enjoy it!")
+    print("Oh yay! I'm so happy you said yes, I worked really hard on this game, and I hope you enjoy it! (Make sure to press enter after line of text when you're done reading it.)")
+    wait()
 elif haha == "N" or haha == "No":
     um = input("Wait, seriously? y/n ").title()
     if um == "Y" or um == "Yes":
-        print("Fine. It's not like I poured my heart and soul into this or anything.")
+        print("Fine. It's not like I poured my heart and soul into this or anything. (Press enter after every line of text)")
         wait()
         guilt = input("Do you feel guilty enough to play my game or are you going to spite me? play/spite ").title()
         if guilt == "Play":
@@ -48,9 +48,10 @@ elif haha == "N" or haha == "No":
             print("Okay then. Goodbye. I'm sorry you didn't want to play with me.")
             sys.exit()
     elif um == "N" or um == "No":
-        print("Wow. okay. You scared me there for a second.")
+        print("Wow. okay. You scared me there for a second. (Press enter)")
         wait()
         print("You know, that's a really mean joke to play on someone who just wants to entertain you with their game. You're lucky I'm so forgiving.")
+        wait()
 else:
     print("That's not a good answer. However, I'm going to assume you meant to say yes. Here we go!")
 time.sleep(1)
@@ -111,7 +112,7 @@ elif 0>= wake or wake >10:
     print("But you just had to be special. You're incapable of following instructions. So, congrats. You lost 100 win points by being a wise guy. Feel free to keep on playing, but you are incapable of winning.")
     you.win_points -=101
     wait()
-    time.sleep(1)
+    delay("...")
     print("Sigh.")
     wait()
     failure = input("Do you want to try again? (y/n) ").title()
@@ -149,7 +150,9 @@ elif 0>= wake or wake >10:
 wait()
 print(f"You now have {you.win_points} win points. You will get updates like this after every challenge you complete, so you won't have to track your points yourself.")
 wait()
-locker = input("The bell starts belling. You're about to enter your first class when you remember you forgot your binder in your locker. You go up to get it, but do you remember your combination? (y/n) ").title()
+print("The bell starts belling. You're about to enter your first class when you remember you forgot your binder in your locker. ")
+wait()
+locker = input("You go up to get it, but do you remember your combination? (y/n) ").title()
 if locker == "Y" or locker == "Yes":
     if you.intelligence_points > 5:
         print("")
@@ -205,6 +208,7 @@ wait()
 print(f"You now have {you.win_points} win points.")
 wait()
 print("The class goes on, but you're getting really tired. You just took a test, okay. How in the world are you supposed to stay awake?")
+wait()
 seven = input("You're not. So here's the deal, do you want to struggle to keep your eyes open or just go to sleep? awake/sleep ").title()
 if seven == "Awake":
     print("")
@@ -245,7 +249,7 @@ elif lunch == "Buy":
     elif you.self_esteem_points >5:
         print("Literally who cares if people think you're a loser. Go get that lunch! Plus 4 win points!")
         wait()
-        time.sleep(1)
+        delay("...")
         print("Yeah... um... you forgot your money....... Good job.. Minus 3 win points.")
         you.win_points +=1
 wait()
@@ -270,6 +274,7 @@ if attention == "Zone":
     print("Your teacher looks around the room at all the bored faces. Their eyes land on you. You remain unaware as they stalk closer to you.")
     wait()
     print("Your teacher asks you a question. You are unable to answer. You fail the class instantly. Minus 2 win points.")
+    wait()
     you.win_points -=2
 elif attention == "Pay":
     print("")
@@ -280,6 +285,7 @@ elif attention == "Pay":
     print("They stop in front of you. They ask a question. Hesitantly, you answer, and though shaky, you get it correct. Good job. If you hadn't paid attention, your teacher would totally hate you.")
     wait()
     print("Your teacher smiles at you. They're so grateful you were paying attention. Plus 2 win points.")
+    wait()
     you.win_points +=2
 print(f"You now have {you.win_points} win points.")
 wait()
@@ -335,8 +341,8 @@ if grades == "Y" or grades == "Yes":
     print("")
     print("You open up PowerSchool and wait for it to load.")
     wait()
-    time.sleep(1)
-
+    delay("...")
+    print("")
     print("Oof.")
     wait()
     if 5 <= you.self_esteem_points:
@@ -352,6 +358,7 @@ if grades == "Y" or grades == "Yes":
         wait()
         you.win_points -=3
 else:
+    print("")
     print("That’s fine, it was probably a good idea not to anyway. Your grades would just depress you, and you know it. Plus 2 win points.")
     wait()
     you.win_points +=2
@@ -380,7 +387,7 @@ else:
     print("")
     print("Here’s the thing, though. You don’t have a lot of friends, so you have nothing to do.")
     wait()
-    study = input("However, you do have a test on Monday. Do you want to study now?").title()
+    study = input("However, you do have a test on Monday. Do you want to study now? y/n ").title()
     print("")
     if study == "No" or study == "N":
         print("You’re right! That’s what weekends are for, after all! Procrastinate now.")
@@ -461,6 +468,7 @@ elif 10<= tired <= 12:
         print("Oh, okay. So you lied to the game, huh?")
         wait()
         print("Lying isn't a good character trait. You should change that. Minus 2 win points.")
+        wait()
         you.win_points -=2
 else:
     if 0>= wake or wake >10:
@@ -479,8 +487,9 @@ print(f"You now have {you.win_points} win points.")
 wait()
 print("Before you go to sleep, you feel a bunch of buzzes from your phone.")
 wait()
-time.sleep(1)
 print("You scroll down, and at the bottom, oh look, another notification from PowerSchool! You open your phone.")
+wait()
+delay("...")
 wait()
 print("""
 Your phone screen:
@@ -517,7 +526,7 @@ you.win_points -=5
 print(f"You now have {you.win_points} win points.")
 wait()
 print("Oh, and before you get your final score, do you remember that test you've got on Monday?")
-print("")
+wait()
 if study == "No" or study == "N":
     print("Remember how I said the game ended before Monday and therefore whether or not you studied didn’t matter?")
     wait()
@@ -526,6 +535,7 @@ if study == "No" or study == "N":
     print("You failed it. Good job.")
     wait()
     print("Minus another 4 win points. Hope you didn't need them to win the game.")
+    wait()
     you.win_points -=4
 else:
     print("Congrats, you studied hard and didn’t have to cram on Sunday, making it easier and less stressful to study.")
@@ -533,31 +543,32 @@ else:
     print("You’re going to do so well on that test!")
     wait()
     print("Plus another win point, just because you deserve it.")
+    wait()
     you.win_points +=1
-print(f"You finished the game with {you.win_points}.")
+print(f"You finished the game with {you.win_points} win points.")
 print("")
-if you.win_points >=10 and you != frosh:
-    print("Congratulations, I'm so proud of you for beating my game!")
-    wait()
-    print("You can choose to play on a harder level, if you want. It's not exact, but it is definitely harder to win as a younger grade.")
-    wait()
-    print("Well, hope you have a good day! Bye!")
-elif you.win_points >=10 and red == "Freshman":
-    print("Congratulations, I'm so proud of you for beating my game!")
-    wait()
-    print("Why don't you try beating it again, but on a harder level?")
-    wait()
-    time.sleep(1)
-    print("...")
-    wait()
-    print("So it kinda appears like being a freshman is the hardest level you can choose.")
-    wait()
-    print("So now I'm even more proud of you! WHy don't you try again, but on an easier level? Or you can experiment more with your answers and see if you can still win.")
-    wait()
-    print("Either way, I hope you have a good day. Bye!")
+if you.win_points >=10:
+    if red == "Freshman":
+        print("Congratulations, I'm so proud of you for beating my game!")
+        wait()
+        print("Why don't you try beating it again, but on a harder level?")
+        wait()
+        delay("...")
+        wait()
+        print("So it kinda appears like being a freshman is the hardest level you can choose.")
+        wait()
+        print("So now I'm even more proud of you! WHy don't you try again, but on an easier level? Or you can experiment more with your answers and see if you can still win.")
+        wait()
+        print("Either way, I hope you have a good day. Bye!")
+    else:
+        print("Congratulations, I'm so proud of you for beating my game!")
+        wait()
+        print("You can choose to play on a harder level, if you want. It's not exact, but it is definitely harder to win as a younger grade.")
+        wait()
+        print("Well, hope you have a good day! Bye!")
 elif 5<= you.win_points >=9:
-    print("Not done yet")
-    print("Hi")
+    print("You were so close!")
+
 elif 0<= you.win_points >=4:
     print("Not done yet.")
     print("I dont feel like coding the extra credit okay.")
