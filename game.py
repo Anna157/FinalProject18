@@ -1,6 +1,5 @@
 import time
 import sys
-import random
 def wait():
     wait = input("")
     return
@@ -8,7 +7,7 @@ def delay(string):
     for char in string:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(.1)
+        time.sleep(.05)
 def extra_o():
     delay("A wild Sanservino appears!")
     wait()
@@ -18,38 +17,47 @@ def extra_o():
     wait()
 def extra1():
     delay("Sanservino hisses at you, then asks his first question:")
+    print("")
+    delay("...")
     time.sleep(1)
-    delay("What is my first name?")
+    delay("~What is my first name?~")
+    print("")
     name = input("").title()
     if name == "Jason":
-        win1 = True
+        return True
     else:
-        win1 = False
+        return False
+    return win1
 def extra2():
     delay("Sanservino growls. You are getting closer to suceeding.")
     wait()
     delay("He comes up with a harder question:")
+    print("")
+    delay("...")
     time.sleep(1)
-    delay("What is my birthday? Answer in MM/DD/YYYY form.")
+    delay("~What is my birthday?~ (Answer in MM/DD/YYYY form.)")
+    print("")
     birth = input("")
     if birth == "12/23/1976":
-        win2 = True
+        return True
     else:
-        win2 = False
-    return win2
+        return False
 def extra3():
     delay("You are getting way too close to winning for Sanservino's liking.")
     wait()
     delay("He decides to ask you a harder question:")
+    print("")
+    delay("...")
     time.sleep(1)
-    delay("Who is Anna's favorite Harry Potter character?")
+    delay("~Who is Anna's favorite Harry Potter character?~")
+    print("")
     fav = input("").title()
     if fav == "Sirius" or fav == "Sirius Black":
-        win3 = True
+        return True
     elif fav == "Hermione" or fav == "Hermione Granger":
-        win3 = True
+        return True
     else:
-        win3 = False
+        return False
 def extra_h1():
     pass
 def extra_h2():
@@ -646,15 +654,11 @@ elif 5<= you.win_points >=9:
             print(f"Good luck, brave {red}. You will need copious amounts of it.")
             print("")
             extra_o()
-            extra1()
-            if win1 == True:
-                extra2()
-                if win2 == True:
-                    extra3()
-                    if win3 == True:
-                        you.win_points +=5
+            if extra1() is True:
+                if extra2() is True:
+                    if extra3() is True:
                         print("")
-                        print(f"Congratulations. You earned 5 extra win points from that excursion. You now have {you.win_points}, enough to win the game!")
+                        print(f"Congratulations. You earned 5 extra win points from that excursion. You now have, enough to win the game!")
                         wait()
                         print("Feel free to play the game again on a harder level, if you feel up to it. Have a good day!")
                         sys.exit()
