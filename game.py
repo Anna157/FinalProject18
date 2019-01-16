@@ -59,9 +59,46 @@ def extra3():
     else:
         return False
 def extra_h1():
-    pass
+    delay("Sanservino roars. You dare answer all the easy questions? Fine, because you are /such/ a failure...")
+    wait()
+    delay("Sanservino decides to give you an EXTRA HARD question now.")
+    wait()
+    delay("...")
+    time.sleep(1)
+    delay("~What is the name of the bear in Tiny Headed Kingdom?~")
+    print("")
+    pip = input("").title()
+    if pip == "Pip":
+        return True
+    else:
+        return False
 def extra_h2():
-    pass
+    delay("Sanservino snarls at you.")
+    wait()
+    delay("...")
+    time.sleep(1)
+    delay("~Spell the certain word from Mary Poppins that is very good, wonderful, though it sounds quite atrocious.~")
+    print("")
+    mary = input("").title()
+    if mary == "Supercalifragilisticexpialidocious":
+        return True
+    else:
+        return False
+def extra_h3():
+    delay("What a big shot, you answered all the hard questions, too.")
+    wait()
+    delay("Sanservino only has one more question for you, but don't think you're off the hook. This one's a doozy.")
+    wait()
+    delay("...")
+    time.sleep(1)
+    delay("...")
+    delay("~What is Anna's full name?~")
+    print("")
+    anna = input("").title()
+    if anna == "Anna Maddalena O'Connell":
+        return True
+    else:
+        return False
 class Grade:
     def __init__(self, grade, stress_points, self_esteem_points, friend_points, intelligence_points, win_points):
         self.grade = grade
@@ -614,6 +651,7 @@ if you.win_points >=10:
         print("So now I'm even more proud of you! WHy don't you try again, but on an easier level? Or you can experiment more with your answers and see if you can still win.")
         wait()
         print("Either way, I hope you have a good day. Bye!")
+        wait()
         sys.exit()
     else:
         print("Congratulations, I'm so proud of you for beating my game!")
@@ -621,6 +659,7 @@ if you.win_points >=10:
         print("You can choose to play on a harder level, if you want. It's not exact, but it is definitely harder to win as a younger grade.")
         wait()
         print("Well, hope you have a good day! Bye!")
+        wait()
         sys.exit()
 elif 5<= you.win_points >=9:
     print("You were so close!")
@@ -635,6 +674,7 @@ elif 5<= you.win_points >=9:
         print("That's not very Magnet of you. In fact, it's so unlike a Magnet student, you don't deserve to win it.")
         wait()
         print("Get out of my game. Now.")
+        wait()
         sys.exit()
     elif bonus == "Y" or bonus == "Yes":
         print("Good luck, okay?")
@@ -643,10 +683,11 @@ elif 5<= you.win_points >=9:
         wait()
         scared = input("You can back out right now if you want. Do you want to? I won't judge. y/n ").title()
         print("")
-        if scared == "N" or scared == "No":
+        if scared == "Y" or scared == "Yes":
             print("I lied. I'm judging you really hard.")
             wait()
             print("Goodbye, coward. Hope you like living your cowardly life. As long as it's far away from me, I'll be happy.")
+            wait()
             sys.exit()
         else:
             print("Okay, if you're absolutely sure.")
@@ -661,25 +702,100 @@ elif 5<= you.win_points >=9:
                         print(f"Congratulations. You earned 5 extra win points from that excursion. You now have, enough to win the game!")
                         wait()
                         print("Feel free to play the game again on a harder level, if you feel up to it. Have a good day!")
+                        wait()
                         sys.exit()
                     else:
                         print("You lost. You were so close to the end, too. Guess you should learn more about my reading tastes.")
                         wait()
                         print("Goodbye, loser.")
+                        wait()
                         sys.exit()
                 else:
                     print("You lost. How dare you not know Sanservino's birthday? Disappointing.")
                     wait()
                     print("Goodbye.")
+                    wait()
                     sys.exit()
             else:
                 print("You lost. And on such a simple question, too? Disappointing.")
                 wait()
                 print("Goodbye.")
+                wait()
                 sys.exit()
 elif 0<= you.win_points >=4:
-    print("Not done yet.")
-    print("I dont feel like coding the extra credit okay.")
+    print(f"Ha, you suck. You only got {you.win_points}?")
+    wait()
+    print(f"You do realize I gave you like 20 chances to score points, right? And you still only got {you.win_points}.")
+    wait()
+    credit = input("Do you want some extra credit? y/n ").title()
+    print("")
+    if credit == "Y" or credit == "Yes":
+        print(f"Good luck, {red}. You will need copious amounts of it.")
+        wait()
+        extra_o()
+        if extra1() is True:
+            if extra2() is True:
+                if extra3() is True:
+                    if extra_h1() is True:
+                        if extra_h2() is True:
+                            if extra_h3() is True:
+                                print("")
+                                print(f"Congratulations. You earned 5 extra win points from that excursion. You now have, enough to win the game!")
+                                wait()
+                                print("Feel free to play the game again on a harder level, if you feel up to it. Have a good day!")
+                                wait()
+                                sys.exit()
+                            else:
+                                print("You lost. On the very last question. My name is Anna Maddalena O'Connell, by the way.")
+                                wait()
+                                print("You're a disappointment. Goodbye.")
+                                wait()
+                                sys.exit()
+                        else:
+                            print("It is supercalifragilisticexpialidocious. Good job, learn how to spell.")
+                            wait()
+                            print("Buy a dictionary, and get out of my game.")
+                            wait()
+                            sys.exit()
+                    else:
+                        print("Stop what you're doing right this instant.")
+                        wait()
+                        print("You don't know Pip??")
+                        wait()
+                        print("Get off my game right this second. Google Tiny Headed Kingdom. You won't be disappointed.")
+                        wait()
+                        sys.exit()
+                else:
+                    print("You lost. You were so close to the end, too. Guess you should learn more about my reading tastes.")
+                    wait()
+                    print("Goodbye, loser.")
+                    wait()
+                    sys.exit()
+            else:
+                print("You lost. How dare you not know Sanservino's birthday? Disappointing.")
+                wait()
+                print("Goodbye.")
+                wait()
+                sys.exit()
+        else:
+            print("You lost. And on such a simple question, too? Disappointing.")
+            wait()
+            print("Goodbye.")
+            wait()
+            sys.exit()
 elif you.win_points < 0:
-    print("Not coded yet.")
-    print("Sue me. I just took a test and i'm tired. Hi, Mrs. Gerstein.")
+    print("You absolute disgrace.")
+    wait()
+    print("I am so ashamed of you right now.")
+    wait()
+    print("Everyone else who played either won or was offered enough extra credit to win.")
+    wait()
+    print("You, on the other hand? You don't get that option.")
+    wait()
+    print("Failures don't get to pass my game. Suffer.")
+    you.win_points -=100
+    print("Also, because I felt like it, I subtracted 100 more points. To make you an extra failure.")
+    wait()
+    print(f"You now have {you.win_points}. Loser. Bye.")
+    wait()
+    sys.exit()
