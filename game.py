@@ -953,7 +953,7 @@ elif 0<= you.win_points >=4:
     else:
         print("Wow. You're comfortable with failing, then?*")
         wait()
-        ("That's not very Magnet of you. goodbye, coward."*)
+        ("That's not very Magnet of you. goodbye, coward.*")
         wait()
         sys.exit()
 #lastly, if they lose the game so compltely that they end with negative points
