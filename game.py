@@ -14,6 +14,7 @@ def delay(string):
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(.05)
+        return
 #extra_o() function, the opening of the extra credit level
 def extra_o():
     delay("A wild Sanservino appears!*")
