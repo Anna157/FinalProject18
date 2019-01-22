@@ -222,6 +222,7 @@ print("The goal is to end the game with at least 10 win points. Here's a freebie
 you.win_points += 1
 wait()
 #the first decision of the user, their wake up time
+#as shown in flowchart, this is a decision type 1, results based solely on player decision
 wake = int(input("Pick a number between 1 and 10: "))
 if 1<= wake <=4:
     print("")
@@ -291,6 +292,7 @@ wait()
 print("The bell starts belling. You're about to enter your first class when you remember you forgot your binder in your locker.*")
 wait()
 #next if statement. the results vary based on the player's input
+#a decision type 2 (combination of player stats and their decision)
 locker = input("You go up to get it, but do you remember your combination? (y/n) ").title()
 if locker == "Y" or locker == "Yes":
     #this time, the user's won points come from their stats as well as their decision
@@ -342,6 +344,7 @@ print("Guess what? You've got a test! You don't even need that precious binder y
 wait()
 #subtracting or adding a number of points to the player's win points based on their intelligence
 #giving them a statement about why they lost/gained points
+#"decision" type 3 (not really a decision because it is based on stats alone)
 if you.intelligence_points == 2:
     print("Oh, poor little freshman, you forgot to study last night. You hand in the test knowing you failed. Minus 4 win points.*")
     you.win_points -=4 #i really hate the freshmen, don't i? i promise i don't
@@ -362,6 +365,7 @@ print("The class goes on, but you're getting really tired. You just took a test,
 wait()
 #if statement with a really weird variable name
 seven = input("You're not. So here's the deal, do you want to struggle to keep your eyes open or just go to sleep? awake/sleep ").title()
+#decision type 1
 #if the player decides to stay awake like a good student
 if seven == "Awake":
     print("")
@@ -398,12 +402,15 @@ wait()
 #asking if the player brought or bought their lunch to school that day
 lunch = input("Lunch time! Did you bring lunch or are you going to buy it? (bring/buy) ").title()
 print("")
+#combination of type 1 and 2
 #making the user aware that bringing lunch is obviously superior to walking allll the way to the caf and buying lunch every day
 if lunch == "Bring":
+    #if they chose to bring lunch, type 1
     print("Your lunch is a little cold, but at least you don't have to walk alllllll the way to the cafeteria. Plus 2 win points.*")
     you.win_points +=2
 #or if they do decide to buy lunch
 elif lunch == "Buy":
+    #if not, type 2
     print("None of your friends want to go to the cafeteria with you. You're going to have to walk there all by yourself. Looking like a loser with no friends. Through the very crowded quad.*")
     wait()
     #their points depend on their self esteem stats
@@ -429,6 +436,7 @@ print("7/8 starts, and right off the bat your teacher announces a pop quiz you'r
 wait()
 #basically the only time the underclassmen can win based on stats alone
 #if the player's grade's stress is below 5
+#type 3
 if you.stress_points <5:
     print("You actually were good on the stress. Sure, you were unprepared, but you were calm enough that you could take the quiz wihtout double guessing yourself. Plus 3 win points.*")
     you.win_points += 3
@@ -442,6 +450,7 @@ print(f"You now have {you.win_points} win points.*")
 wait()
 attention = input("The bell rings, and you go to 9/10. But your teacher is just sooooooooo boring. Do you want to zone out or keep paying attention? zone/pay ").title()
 #asking if the player wants to go to sleep in class again, wondering if they'll change their answer based on results given earlier in the game
+#type 1
 if attention == "Zone":
     print("")
     print("Yeah, you're right. Who needs to pay attention in class? It sucks, you're bored, so why not take a nap instead?*")
@@ -471,6 +480,7 @@ print("School is over! Yay! But the game's not done!*")
 wait()
 #asking how the player wants to get home
 home = input("Do you take the bus home, drive, or walk? bus/drive/walk ").title()
+#type 1
 if home == "Drive":
     print("")
     #if they said they drive home, asking if they carpool with others or not
@@ -507,7 +517,7 @@ elif home == "Bus":
     print("You end up getting home 5 minutes earlier than usual! Yay speeding! Plus 1 win point.*")
     wait()
     #an important message to the easily influenced youth
-    print("Make sure to actually follow the rules of the road, though.")
+    print("Make sure to actually follow the rules of the road, though, kiddos.")
     wait()
     you.win_points +=1
 #if the player decides to walk home
@@ -527,6 +537,7 @@ print("As you walk into your house, you feel your phone buzz.*")
 wait()
 #ooh, powerschool update! asking if the player wants to check their phone
 grades = input("Oh look, an update from PowerSchool! Do you want to check it? y/n ").title()
+#type 1 and type 2
 if grades == "Y" or grades == "Yes":
     print("")
     print("You open up PowerSchool and wait for it to load.*")
@@ -534,7 +545,7 @@ if grades == "Y" or grades == "Yes":
     print("")
     delay("...Oof.*")
     wait()
-    #their points earned/lost depend on their self esteem
+    #their points earned/lost depend on their self esteem (type 2 aspect)
     if 5 <= you.self_esteem_points:
         #if ther self esteem is high, I'm much nicer
         print("Your grades weren’t the best, but your self esteem is high enough that you can take this hit and still survive.*")
@@ -550,6 +561,7 @@ if grades == "Y" or grades == "Yes":
         wait()
         you.win_points -=3
 #if they don't want to check they get off the hook and win the most points out of the other choices
+#and it's a type 1 decision
 else:
     print("")
     print("That’s fine, it was probably a good idea not to anyway. Your grades would just depress you, and you know it. Plus 2 win points.*")
@@ -568,6 +580,7 @@ if you.friend_points >=5:
     wait()
     study = input("Well? Do you want to study now? y/n ").title()
     #asking if the player wants to be responsible
+    #type 1
     #if they decide to be responsible
     if study == "Yes" or study == "Y":
         print("")
@@ -590,6 +603,7 @@ else:
     #does anyone ever really want to be responsible though? i sure don't
     study = input("However, you do have a test on Monday. Do you want to study now? y/n ").title()
     print("")
+    #type 1
     if study == "No" or study == "N":
         print("You’re right! That’s what weekends are for, after all! Procrastinate now.*")
         wait()
@@ -608,6 +622,7 @@ wait()
 #asking when the player wants to go to sleep
 tired = int(input("Choose a number between 1 and 12. "))
 #they get between 1 and 3 hours of sleep
+#type 1
 if 1<= tired <=3:
     print("")
     print(f"You only got {tired} hours of sleep!*")
@@ -642,6 +657,7 @@ elif 7<= tired <=9:
     you.win_points +=3
     envy = input("I'm jealous. Tell me, in real life, do you actually get that much sleep on the regular? y/n ").title()
     #me being a troll because it doesn't matter what they say they still lose points
+    #"decision" type 1 (even though they lose the same amount of points either way)
     #but if they say yes
     if envy == "Y" or envy == "Yes":
         print("")
@@ -667,6 +683,7 @@ elif 10<= tired <= 12:
     jealous = input("Though, tell me, in real life, do you actually get that much sleep on the regular? y/n ").title()
     #more of me trolling the player
     #again, if they say yes
+    #and again, type 1
     if jealous == "Y" or jealous == "Yes":
         print("")
         print("Wow. Really? Good for you.*")
@@ -745,6 +762,7 @@ wait()
 print("Oh, and before you get your final score, do you remember that test you've got on Monday?*")
 wait()
 #if they decided not to study i yell at them again
+#which was type 1 the first time but i decided to include it again in case you weren't aware
 if study == "No" or study == "N":
     print("Remember how I said the game ended before Monday and therefore whether or not you studied didn’t matter?*")
     wait()
@@ -805,6 +823,7 @@ elif 5<= you.win_points >=9:
     bonus = input("Well then, do you want to play a bonus level for some extra credit? y/n ").title()
     print("")
     #asking if the player wants to play the bonus round to get the points they need to win
+    #type 1
     #if they don't want the points and are okay with failing
     if bonus == "No" or bonus == "n":
         print("Oh, so I guess you're fine with being a failure.*")
@@ -821,6 +840,7 @@ elif 5<= you.win_points >=9:
         print("The bonus level is going to be hard. It might even be a litle scary. But you're sure you want this?*")
         wait()
         scared = input("You can back out right now if you want. Do you want to? I won't judge. y/n ").title()
+        #type 1
         print("")
         #i give them a way out in case they get scared
         if scared == "Y" or scared == "Yes":
@@ -909,6 +929,7 @@ elif 0<= you.win_points >=4:
                                 wait()
                                 sys.exit()
                             else:
+                                #ha they lost on the last question but i don't let them know that until later
                                 delay("Congratulations!*")
                                 #me = troll
                                 wait()
