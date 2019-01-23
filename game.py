@@ -800,7 +800,7 @@ if you.win_points >=10:
         wait()
         print("So it kinda appears like being a freshman is the hardest level you can choose.*")
         wait()
-        print("So now I'm even more proud of you! WHy don't you try again, but on an easier level? Or you can experiment more with your answers and see if you can still win.*")
+        print("So now I'm even more proud of you! Why don't you try again, but on an easier level? Or you can experiment more with your answers and see if you can still win.*")
         wait()
         print("Either way, I hope you have a good day. Bye!*")
         wait()
@@ -868,8 +868,7 @@ elif 5<= you.win_points >=9:
                     if extra3() is True:
                         #if the player was correct, they get 5 extra points and win the game
                         print("")
-                        you.win_points += 5
-                        delay(f"Congratulations. You earned 5 extra win points from that excursion. You now have {you.win_points}, enough to win the game!*")
+                        delay("Congratulations. You earned 5 extra win points from that excursion. You now have enough to win the game!*")
                         wait()
                         delay("Feel free to play the game again on a harder level, if you feel up to it. Have a good day!*")
                         wait()
@@ -922,8 +921,7 @@ elif 0<= you.win_points >=4:
                             if extra_h3() is True:
                                 #they won! even with 3 more extra hard questions
                                 print("")
-                                you.win_points +=10
-                                delay(f"Congratulations. You earned 10 extra win points from that excursion. You now have {you.win_points}, enough to win the game!*")
+                                delay("Congratulations. You earned 10 extra win points from that excursion. You now have enough to win the game!*")
                                 wait()
                                 delay("Feel free to play the game again on a harder level, if you feel up to it. Have a good day!*")
                                 wait()
@@ -967,7 +965,7 @@ elif 0<= you.win_points >=4:
                 wait()
                 sys.exit()
         else:
-            delay("You lost. And on such a simple question, too? HIs name is Jason, obviously. Disappointing.*")
+            delay("You lost. And on such a simple question, too? His name is Jason, obviously. Disappointing.*")
             wait()
             delay("Goodbye.*")
             wait()
@@ -975,7 +973,7 @@ elif 0<= you.win_points >=4:
     else:
         print("Wow. You're comfortable with failing, then?*")
         wait()
-        ("That's not very Magnet of you. goodbye, coward.*")
+        print("That's not very Magnet of you. Goodbye, coward.*")
         wait()
         sys.exit()
 #lastly, if they lose the game so compltely that they end with negative points
@@ -995,3 +993,5 @@ elif you.win_points < 0:
     print(f"You now have {you.win_points}. Loser. Bye.*")
     wait()
     sys.exit()
+
+
