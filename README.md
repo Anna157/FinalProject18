@@ -8,3 +8,6 @@ Williamson, Jonathan WilliamsonJonathan. “How Can I Check the Returned Boolean
 
 
 (I also received help from people like Beatriz Santos, Mrs. Gerstein, and Laura Masciola, etc.)
+
+Flowchart:
+https://drive.google.com/file/d/1HJUg72XYbZNxmrtKct26E3F_41flG74m/view?usp=sharing
