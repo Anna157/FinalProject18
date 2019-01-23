@@ -2,6 +2,7 @@ My game is a Magnet role playing game where the player starts the game by choosi
 
 
 Sources:
+
 Black-PixelBlack-Pixel. “Printing a String with a Little Delay between the Chars.” Stack Overflow, Jan. 2011,   stackoverflow.com/questions/4627033/printing-a-string-with-a-little-delay-between-the-chars.
 
 Williamson, Jonathan WilliamsonJonathan. “How Can I Check the Returned Boolean of a Function?” Blender Stack Exchange, June 2013, blender.stackexchange.com/questions/1615/how-can-i-check-the-returned-boolean-of-a-function.
