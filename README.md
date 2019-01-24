@@ -11,4 +11,5 @@ Williamson, Jonathan WilliamsonJonathan. “How Can I Check the Returned Boolean
 (I also received help from people like Beatriz Santos, Mrs. Gerstein, and Laura Masciola, etc.)
 
 Flowchart:
-https://drive.google.com/file/d/12zl9IDqCF2co5-Spi4BPtDeSUrff3Utv/view?usp=sharing
+PDF File: https://drive.google.com/file/d/12zl9IDqCF2co5-Spi4BPtDeSUrff3Utv/view?usp=sharing
+PNG File: https://drive.google.com/file/d/1SjeHJNxpkRfPORQCOYUbGVDSN_8pCmTG/view
